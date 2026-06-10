@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividad 3. Rectas en el plano</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body{
+    font-family: Arial, sans-serif;
+    background-image:url('https://res.cloudinary.com/dddgkfpkn/image/upload/v1778235991/ChatGPT_Image_8_may_2026_12_25_16_b3q1m1.png');
+    background-size:cover;
+    background-attachment:fixed;
+    margin:0;
+    padding:20px;
+}
+
+.contenedor{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,248,220,0.92);
+    padding:30px;
+    border-radius:20px;
+}
+
+h1{
+    text-align:center;
+    font-family:'MedievalSharp', cursive;
+    color:#5b3a1e;
+}
+
+.intro{
+    text-align:center;
+    font-size:18px;
+    color:#5b3a1e;
+}
+
+.pregunta{
+    margin:25px 0;
+    padding:15px;
+    background:white;
+    border-radius:10px;
+}
+
+.correcta{
+    background:#d7f5d7 !important;
+    border:3px solid #2e8b57;
+}
+
+.incorrecta{
+    background:#ffe0e0 !important;
+    border:3px solid #c0392b;
+}
+
+.dibujo{
+    text-align:center;
+    margin:15px 0;
+}
+
+svg{
+    max-width:260px;
+    height:130px;
+}
+
+.linea{
+    stroke:#5b3a1e;
+    stroke-width:6;
+    stroke-linecap:round;
+}
+
+p{
+    font-weight:bold;
+}
+
+button{
+    display:block;
+    margin:20px auto;
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:#8b5e3c;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#6f472b;
+}
+
+#resultado{
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:25px;
+    color:#5b3a1e;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1>Actividad 3. Rectas en el plano</h1>
+
+<p class="intro">Observa el dibujo y elige el tipo de rectas.</p>
+
+<form id="quiz">
+
+<div class="pregunta" id="q1">
+<p>1. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="30" y1="45" x2="230" y2="45" class="linea"/>
+<line x1="30" y1="90" x2="230" y2="90" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p1" value="paralelas"> Paralelas<br>
+<input type="radio" name="p1" value="secantes"> Secantes<br>
+<input type="radio" name="p1" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q2">
+<p>2. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="40" y1="20" x2="220" y2="110" class="linea"/>
+<line x1="40" y1="110" x2="220" y2="20" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p2" value="paralelas"> Paralelas<br>
+<input type="radio" name="p2" value="secantes"> Secantes<br>
+<input type="radio" name="p2" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q3">
+<p>3. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="130" y1="20" x2="130" y2="110" class="linea"/>
+<line x1="40" y1="65" x2="220" y2="65" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p3" value="paralelas"> Paralelas<br>
+<input type="radio" name="p3" value="secantes"> Secantes<br>
+<input type="radio" name="p3" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q4">
+<p>4. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="70" y1="20" x2="70" y2="110" class="linea"/>
+<line x1="160" y1="20" x2="160" y2="110" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p4" value="paralelas"> Paralelas<br>
+<input type="radio" name="p4" value="secantes"> Secantes<br>
+<input type="radio" name="p4" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q5">
+<p>5. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="30" y1="100" x2="230" y2="35" class="linea"/>
+<line x1="50" y1="30" x2="210" y2="110" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p5" value="paralelas"> Paralelas<br>
+<input type="radio" name="p5" value="secantes"> Secantes<br>
+<input type="radio" name="p5" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q6">
+<p>6. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="50" y1="35" x2="210" y2="35" class="linea"/>
+<line x1="130" y1="35" x2="130" y2="110" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p6" value="paralelas"> Paralelas<br>
+<input type="radio" name="p6" value="secantes"> Secantes<br>
+<input type="radio" name="p6" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q7">
+<p>7. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="40" y1="40" x2="220" y2="70" class="linea"/>
+<line x1="40" y1="95" x2="220" y2="125" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p7" value="paralelas"> Paralelas<br>
+<input type="radio" name="p7" value="secantes"> Secantes<br>
+<input type="radio" name="p7" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q8">
+<p>8. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="40" y1="20" x2="220" y2="90" class="linea"/>
+<line x1="70" y1="115" x2="190" y2="25" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p8" value="paralelas"> Paralelas<br>
+<input type="radio" name="p8" value="secantes"> Secantes<br>
+<input type="radio" name="p8" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q9">
+<p>9. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="35" y1="70" x2="225" y2="70" class="linea"/>
+<line x1="95" y1="20" x2="95" y2="120" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p9" value="paralelas"> Paralelas<br>
+<input type="radio" name="p9" value="secantes"> Secantes<br>
+<input type="radio" name="p9" value="perpendiculares"> Perpendiculares
+</div>
+
+<div class="pregunta" id="q10">
+<p>10. Estas rectas son:</p>
+<div class="dibujo">
+<svg viewBox="0 0 260 130">
+<line x1="35" y1="45" x2="225" y2="45" class="linea"/>
+<line x1="35" y1="85" x2="225" y2="85" class="linea"/>
+</svg>
+</div>
+<input type="radio" name="p10" value="paralelas"> Paralelas<br>
+<input type="radio" name="p10" value="secantes"> Secantes<br>
+<input type="radio" name="p10" value="perpendiculares"> Perpendiculares
+</div>
+
+<button type="button" onclick="corregir()">Comprobar</button>
+<button type="button" onclick="reiniciar()">Intentar de nuevo</button>
+
+</form>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+const respuestasCorrectas = {
+    p1: "paralelas",
+    p2: "secantes",
+    p3: "perpendiculares",
+    p4: "paralelas",
+    p5: "secantes",
+    p6: "perpendiculares",
+    p7: "paralelas",
+    p8: "secantes",
+    p9: "perpendiculares",
+    p10: "paralelas"
+};
+
+function corregir(){
+    let puntuacion = 0;
+
+    for(let i=1; i<=10; i++){
+        let pregunta = document.getElementById("q" + i);
+        let respuesta = document.querySelector('input[name="p' + i + '"]:checked');
+
+        pregunta.classList.remove("correcta", "incorrecta");
+
+        if(respuesta && respuesta.value === respuestasCorrectas["p" + i]){
+            puntuacion++;
+            pregunta.classList.add("correcta");
+        }else{
+            pregunta.classList.add("incorrecta");
+        }
+    }
+
+    let mensaje = "";
+
+    if(puntuacion === 10){
+        mensaje = "🏆 ¡Excelente! Has conseguido 10/10";
+    }else if(puntuacion >= 7){
+        mensaje = "⭐ Muy bien. Has conseguido " + puntuacion + "/10";
+    }else if(puntuacion >= 5){
+        mensaje = "👍 Bien. Has conseguido " + puntuacion + "/10. Puedes repetir para mejorar.";
+    }else{
+        mensaje = "📚 Has conseguido " + puntuacion + "/10. Inténtalo de nuevo para mejorar.";
+    }
+
+    document.getElementById("resultado").innerHTML = mensaje;
+}
+
+function reiniciar(){
+    document.getElementById("quiz").reset();
+    document.getElementById("resultado").innerHTML = "";
+
+    for(let i=1; i<=10; i++){
+        let pregunta = document.getElementById("q" + i);
+        pregunta.classList.remove("correcta", "incorrecta");
+    }
+
+    window.scrollTo({top:0, behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
